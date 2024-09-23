@@ -18,6 +18,14 @@ fn test_heat_transfer_simulation() {
         "Total heat transferred: {:.2}J",
         result.total_heat_transferred()
     );
+    println!(
+        "Final temperature of obj1: {:.2}",
+        result.final_temp_of_obj1()
+    );
+    println!(
+        "Final temperature of obj2: {:.2}",
+        result.final_temp_of_obj2()
+    );
     println!("Final temperatures: {:?}", result.final_temperatures());
 
     // Add assertions to verify the results
