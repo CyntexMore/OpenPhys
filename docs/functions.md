@@ -47,7 +47,7 @@ If you also named the `let` variable `result` for the `simulate_heat_transfer` f
 ```rs
 println!("Total time: {:.2} seconds", result.total_time());
 ```
-> ![TIP]
+> [!TIP]
 > The best way to print out values from the results is using the `{:.2}` formatting, *for clarity*.
 
 ### Returnable values of the `heat_transfer` function
