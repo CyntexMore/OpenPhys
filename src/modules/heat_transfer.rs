@@ -24,32 +24,6 @@ pub struct HeatTransferResult {
     pub final_temp_obj2: f64,
 }
 
-impl HeatTransferResult {
-    pub fn time_steps(&self) -> usize {
-        self.time_steps
-    }
-
-    pub fn total_time(&self) -> f64 {
-        self.total_time
-    }
-
-    pub fn total_heat_transferred(&self) -> f64 {
-        self.total_heat_transferred
-    }
-
-    pub fn final_temp_of_obj1(&self) -> f64 {
-        self.final_temp_obj1
-    }
-
-    pub fn final_temp_of_obj2(&self) -> f64 {
-        self.final_temp_obj2
-    }
-
-    pub fn final_temperatures(&self) -> (f64, f64) {
-        (self.final_temp_obj1, self.final_temp_obj2)
-    }
-}
-
 pub fn simulate_heat_transfer(
     obj1: &mut Object,
     obj2: &mut Object,
@@ -60,18 +34,13 @@ pub fn simulate_heat_transfer(
     let mut total_time = 0.0;
     let mut total_heat_transferred = 0.0;
 
-    loop {
-        let initial_temp_diff = (obj1.temperature - obj2.temperature).abs();
+    let heat_capacity1 = obj1.mass * obj1.specific_heat_capacity;
+    let heat_capacity2 = obj2.mass * obj2.specific_heat_capacity;
+    let heat_capacity_factor = 1.0 / (1.0 / heat_capacity1 + 1.0 / heat_capacity2);
 
-        if initial_temp_diff < equilibrium_threshold {
-            break;
-        }
-
-        let heat_capacity1 = obj1.mass * obj1.specific_heat_capacity;
-        let heat_capacity2 = obj2.mass * obj2.specific_heat_capacity;
-
+    while (obj1.temperature - obj2.temperature).abs() >= equilibrium_threshold {
         let heat_transfer_rate =
-            initial_temp_diff / (1.0 / heat_capacity1 + 1.0 / heat_capacity2) * time_step;
+            (obj1.temperature - obj2.temperature).abs() * heat_capacity_factor * time_step;
 
         let obj1_delta_t = heat_transfer_rate / heat_capacity1;
         let obj2_delta_t = heat_transfer_rate / heat_capacity2;
@@ -84,7 +53,7 @@ pub fn simulate_heat_transfer(
             obj2.temperature -= obj2_delta_t;
         }
 
-        total_heat_transferred += heat_transfer_rate.abs();
+        total_heat_transferred += heat_transfer_rate;
         time_steps += 1;
         total_time += time_step;
     }
