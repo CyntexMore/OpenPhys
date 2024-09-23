@@ -37,6 +37,14 @@ impl HeatTransferResult {
         self.total_heat_transferred
     }
 
+    pub fn final_temp_of_obj1(&self) -> f64 {
+        self.final_temp_obj1
+    }
+
+    pub fn final_temp_of_obj2(&self) -> f64 {
+        self.final_temp_obj2
+    }
+
     pub fn final_temperatures(&self) -> (f64, f64) {
         (self.final_temp_obj1, self.final_temp_obj2)
     }
