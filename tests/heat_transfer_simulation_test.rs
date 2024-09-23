@@ -13,9 +13,9 @@ fn test_heat_transfer_simulation() {
     let result = simulate_heat_transfer(&mut obj1, &mut obj2, time_step, equilibrium_threshold);
 
     println!("Simulation completed in {} steps", result.time_steps());
-    println!("Total time: {} seconds", result.total_time());
+    println!("Total time: {:.2} seconds", result.total_time());
     println!(
-        "Total heat transferred: {}J",
+        "Total heat transferred: {:.2}J",
         result.total_heat_transferred()
     );
     println!("Final temperatures: {:?}", result.final_temperatures());
