@@ -6,7 +6,7 @@ pub struct Object {
     pub temperature: f64,
     /// The object's specific heat capacity in [joule per kilogram kelvin](https://metricsystem.net/derived-units/units-whose-names-include-special-names/joule-per-kilogram-kelvin/) (J/kg K).
     pub specific_heat_capacity: f64,
-    /// The object's density in kig per m^3 (kg/m^3).
+    /// The object's density in kg per m^3 (kg/m^3).
     pub density: f64,
 }
 
