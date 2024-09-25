@@ -11,9 +11,7 @@
 
 # Documentation
 
-The documentation of **OpenPhys** is done with inline comments.
-
-You can generate the documentation for yourself to view in an HTML format with `cargo doc`, or read it on [OpenPhys's docs.rs page](https://docs.rs/openphys/0.1.0/openphys/).
+Read the documentation on [doc.rs](https://docs.rs/openphys/0.1.0/openphys/) or alternatively generate it yourself with `cargo doc`.
 
 # License
 - [AGPL-3.0 license](https://github.com/CyntexMore/OpenPhys/blob/main/LICENSE)
