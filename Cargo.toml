@@ -5,5 +5,8 @@ authors = ["CyntexMore"]
 edition = "2021"
 description = "OpenPhys is a simple physics engine library written in Rust."
 license = "AGPL-3.0"
+documentation = "https://docs.rs/openphys/latest/openphys"
+homepage = "https://crates.io/crates/openphys"
+repository = "https://github.com/CyntexMore/OpenPhys"
 
 [dependencies]
