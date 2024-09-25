@@ -1,11 +1,22 @@
 #[derive(Debug, Clone)]
 pub struct Object {
-    pub mass: f64,                   // Mass in kilograms (kg)
-    pub temperature: f64,            // Temperature in Kelvin (K)
-    pub specific_heat_capacity: f64, // Specific heat capacity in J/(kg*K)
+    /// The object's mass in kilograms (kg).
+    pub mass: f64,
+    /// The object's temperature in kelvin (K).
+    pub temperature: f64,
+    /// The object's specific heat capacity in [joule per kilogram kelvin](https://metricsystem.net/derived-units/units-whose-names-include-special-names/joule-per-kilogram-kelvin/) (J/kg K).
+    pub specific_heat_capacity: f64,
 }
 
 impl Object {
+    /// You can create a new object using the `Object::new()` function. An object can have a
+    /// `mass`, a `temperature` and a `specific_heat_capacity` value.
+    /// # Examples
+    /// ```
+    /// let obj1 = Object::new(1.0, 273.15, 4980.0);
+    /// ````
+    /// The variable must be mutable if you want to use it in a function that changes one or more
+    /// of it's values.
     pub fn new(mass: f64, temperature: f64, specific_heat_capacity: f64) -> Self {
         Self {
             mass,

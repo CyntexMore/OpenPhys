@@ -1,14 +1,42 @@
 use crate::utils::object::Object;
 
+/// The `HeatTransferResult` struct is used to collect the results from the heat transfer simulation.
 #[derive(Debug, Clone)]
 pub struct HeatTransferResult {
+    /// The current of number time steps elapsed since the start of the simulation.
     pub time_steps: usize,
+    /// The current time elapsed since the start of the simulation.
     pub total_time: f64,
+    /// The total amount of heat transferred between the objects in joules.
     pub total_heat_transferred: f64,
+    /// The final temperature of obj1 after the simulation finishes.
     pub final_temp_obj1: f64,
+    /// The final temperature of obj2 after the simulation finishes.
     pub final_temp_obj2: f64,
 }
 
+/// Use the `simulate_heat_transfer` function to simulate heat transfer between two objects.
+/// # Usage
+/// ```
+/// let result = simulate_heat_transfer(&mut obj1,  &mut obj2, time_step, equilibrium_threshold);
+/// ```
+/// \*Note: The objects must be made in mutable variables since their temperatures will get changed. The `time_step` and `equilibrium_threshold` variables must be specified by the user.
+///
+/// The `time_step` variable specifies the duration of each simulation step in seconds.
+///
+/// The `equilibrium_threshold` variable specifies the temperature difference below which the objects are considered to be in thermal equilibrium. I *recommend* to use *10^-6* as a value but anything below *10^-2* will do.
+///
+/// # Examples
+/// ```
+/// fn test_heat_transfer_simulation() {
+///     let mut obj1 = Object::new(1.0, 375.15, 4186.0);
+///     let mut obj2 = Object::new(1.0, 273.15, 4186.0);
+///     let time_step = 0.1;
+///     let equilibrium_threshold = 1e-6;
+///
+///     let result = simulate_heat_transfer(&mut obj1, &mut obj2, time_step, equilibrium_threshold);
+/// }
+/// ```
 pub fn simulate_heat_transfer(
     obj1: &mut Object,
     obj2: &mut Object,
