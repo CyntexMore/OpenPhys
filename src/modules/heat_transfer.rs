@@ -15,9 +15,17 @@ pub struct HeatTransferResult {
     pub final_temp_obj2: f64,
 }
 
-/// Use the `simulate_heat_transfer` function to simulate heat transfer between two objects.
+/// The `simulate_heat_transfer` function is used to simulate heat transfer between two objects.
 /// # Usage
 /// ```
+/// use openphys::modules::heat_transfer::simulate_heat_transfer;
+/// use openphys::utils::object::Object;
+///
+/// let mut obj1 = Object::new(1.0, 375.15, 4186.0, 1.0);
+/// let mut obj2 = Object::new(1.0, 273.15, 4186.0, 1.0);
+/// let time_step = 0.1;
+/// let equilibrium_threshold = 1e-6;
+///
 /// let result = simulate_heat_transfer(&mut obj1,  &mut obj2, time_step, equilibrium_threshold);
 /// ```
 /// \*Note: The objects must be made in mutable variables since their temperatures will get changed. The `time_step` and `equilibrium_threshold` variables must be specified by the user.
@@ -25,18 +33,6 @@ pub struct HeatTransferResult {
 /// The `time_step` variable specifies the duration of each simulation step in seconds.
 ///
 /// The `equilibrium_threshold` variable specifies the temperature difference below which the objects are considered to be in thermal equilibrium. I *recommend* to use *10^-6* as a value but anything below *10^-2* will do.
-///
-/// # Examples
-/// ```
-/// fn test_heat_transfer_simulation() {
-///     let mut obj1 = Object::new(1.0, 375.15, 4186.0);
-///     let mut obj2 = Object::new(1.0, 273.15, 4186.0);
-///     let time_step = 0.1;
-///     let equilibrium_threshold = 1e-6;
-///
-///     let result = simulate_heat_transfer(&mut obj1, &mut obj2, time_step, equilibrium_threshold);
-/// }
-/// ```
 pub fn simulate_heat_transfer(
     obj1: &mut Object,
     obj2: &mut Object,
