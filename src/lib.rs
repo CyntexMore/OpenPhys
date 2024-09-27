@@ -3,8 +3,7 @@
 //! [OpenPhys]: https://github.com/CyntexMore/OpenPhys
 
 pub mod modules {
-    /// `heat_transfer` is used to simulate heat transfer between two objects based on the
-    /// objects' mass, temperature and specific heat capacity.
+    /// The `heat_transfer` is used to simulate heat transfer between two objects.
     pub mod heat_transfer;
 }
 
