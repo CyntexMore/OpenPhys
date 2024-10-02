@@ -1,6 +1,6 @@
 [package]
 name = "openphys"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["CyntexMore"]
 edition = "2021"
 description = "OpenPhys is a simple physics engine library written in Rust."
