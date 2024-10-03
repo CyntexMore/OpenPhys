@@ -21,8 +21,18 @@ pub struct HeatTransferResult {
 /// use openphys::modules::heat_transfer::simulate_heat_transfer;
 /// use openphys::utils::object::Object;
 ///
-/// let mut obj1 = Object::new(1.0, 375.15, 4186.0, 1.0);
-/// let mut obj2 = Object::new(1.0, 273.15, 4186.0, 1.0);
+/// let mut obj1 = Object {
+///     mass: 10.0
+///     temperature: 293.15,
+///     specific_heat_capacity: 4980.0,
+///     ..Object::default()
+/// };
+/// let mut obj2 = Object {
+///     mass: 42.0
+///     temperature: 273.15,
+///     specific_heat_capacity: 8920.0,
+///     ..Object::default()
+/// };
 /// let time_step = 0.1;
 /// let equilibrium_threshold = 1e-6;
 ///
