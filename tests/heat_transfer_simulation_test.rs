@@ -3,8 +3,18 @@ use openphys::utils::object::Object;
 
 #[test]
 fn test_heat_transfer_simulation() {
-    let mut obj1 = Object::new(1.0, 373.15, 4186.0, 1.0); // 1kg of water at its boiling point
-    let mut obj2 = Object::new(1.0, 273.15, 4186.0, 1.0); // 1kg of water at its freezing point
+    let mut obj1 = Object {
+        mass: 1.0,
+        temperature: 373.15,
+        specific_heat_capacity: 4186.0,
+        ..Object::default()
+    };
+    let mut obj2 = Object {
+        mass: 1.0,
+        temperature: 273.15,
+        specific_heat_capacity: 4186.0,
+        ..Object::default()
+    };
     let time_step = 0.1; // 0.1 seconds
     let equilibrium_threshold = 1e-6; // The equilibrium threshold is 10^-6 because
                                       // trying to check if two f64 values are equal
