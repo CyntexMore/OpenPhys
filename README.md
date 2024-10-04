@@ -15,7 +15,7 @@
 > **OpenPhys** is early in developement, a lot more features will be added in the future.
 
 - Heat transfer simulation
-- Elastic collision simulation
+- Calculate gravitational force
 
 ## Installation
 
