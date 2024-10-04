@@ -22,13 +22,13 @@ pub struct HeatTransferResult {
 /// use openphys::utils::object::Object;
 ///
 /// let mut obj1 = Object {
-///     mass: 10.0
+///     mass: 10.0,
 ///     temperature: 293.15,
 ///     specific_heat_capacity: 4980.0,
 ///     ..Object::default()
 /// };
 /// let mut obj2 = Object {
-///     mass: 42.0
+///     mass: 42.0,
 ///     temperature: 273.15,
 ///     specific_heat_capacity: 8920.0,
 ///     ..Object::default()
