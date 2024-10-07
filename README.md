@@ -11,8 +11,7 @@
 
 ## Features
 
-> [!IMPORTANT]
-> **OpenPhys** is early in developement, a lot more features will be added in the future.
+**OpenPhys** is early in developement, a lot more features will be added in the future.
 
 - Heat transfer simulation
 - Calculate gravitational force
@@ -22,7 +21,7 @@
 You can simply add **OpenPhys** to your project with `cargo add openphys`, or alternatively you can add it to your `Cargo.toml`:
 ```
 [dependencies]
-openphys = "0.1.2"
+openphys = "0.1.3"
 ```
 
 ## Contributing
