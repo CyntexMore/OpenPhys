@@ -27,9 +27,6 @@ pub struct Object {
 ///     ..Object::default()
 /// };
 /// ```
-///
-/// The variable must be mutable if you want to use it in a function that changes one or more
-/// of it's values.
 impl Object {
     /// You can create a new empty object using the `Object::new()` function.
     ///
@@ -39,9 +36,6 @@ impl Object {
     ///
     /// let obj1 = Object::new();
     /// ```
-    ///
-    /// The variable must be mutable if you want to use it in a function that changes one or more
-    /// of it's values.
     pub fn new() -> Self {
         Self {
             mass: 0.0,
@@ -73,9 +67,6 @@ impl Object {
     ///     ..Object::default()
     /// };
     /// ```
-    ///
-    /// The variable must be mutable if you want to use it in a function that changes one or more
-    /// of it's values.
     pub fn default() -> Self {
         Self {
             mass: 1.0,
