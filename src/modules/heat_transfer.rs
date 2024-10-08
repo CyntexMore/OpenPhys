@@ -16,7 +16,7 @@ pub struct HeatTransferResult {
 }
 
 /// The `simulate_heat_transfer` function is used to simulate heat transfer between two objects.
-/// # Usage
+/// # Examples
 /// ```
 /// use openphys::modules::heat_transfer::simulate_heat_transfer;
 /// use openphys::utils::object::Object;

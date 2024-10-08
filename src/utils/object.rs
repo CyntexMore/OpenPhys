@@ -18,7 +18,7 @@ pub struct Object {
 
 /// You can create a new object inside of a variable.
 ///
-/// # Usage
+/// # Examples
 /// ```
 /// use openphys::utils::object::Object;
 ///
@@ -30,7 +30,7 @@ pub struct Object {
 impl Object {
     /// You can create a new empty object using the `Object::new()` function.
     ///
-    /// # Usage
+    /// # Examples
     /// ```
     /// use openphys::utils::object::Object;
     ///
@@ -51,7 +51,7 @@ impl Object {
     /// You can create an object with some reasonable defaults with the `Object::default()`
     /// function.
     ///
-    /// # Usage
+    /// # Examples
     /// ```
     /// use openphys::utils::object::Object;
     ///

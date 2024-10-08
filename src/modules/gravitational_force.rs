@@ -5,7 +5,7 @@ const G: f64 = 6.67430e-11; // Gravitational constant
 /// The `calculate_gravitational_force` function is used to calculate the gravitational force
 /// between two objects.
 ///
-/// # Usage
+/// # Examples
 /// ```
 /// use openphys::modules::gravitational_force::calculate_gravitational_force;
 ///
