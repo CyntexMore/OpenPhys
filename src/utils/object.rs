@@ -4,9 +4,11 @@ pub struct Object {
     pub mass: f64,
     /// The object's temperature in kelvin (K).
     pub temperature: f64,
+    /// Specifies if the object's temperature is in celsius or not (˚C).
+    pub is_celsius: bool,
     /// The object's specific heat capacity in [joule per kilogram kelvin](https://metricsystem.net/derived-units/units-whose-names-include-special-names/joule-per-kilogram-kelvin/) (J/kg K).
     pub specific_heat_capacity: f64,
-    /// The object's density in kilogram per m^3 (kg/m^3).
+    /// The object's density in grams per cm^3 (g/cm^3).
     pub density: f64,
     /// The object's velocity in meter per second (m/s).
     pub velocity: f64,
@@ -40,6 +42,7 @@ impl Object {
         Self {
             mass: 0.0,
             temperature: 0.0,
+            is_celsius: false,
             specific_heat_capacity: 0.0,
             density: 0.0,
             velocity: 0.0,
@@ -63,7 +66,8 @@ impl Object {
     ///
     /// let obj1 = Object {
     ///     mass: 1.0,
-    ///     temperature: 293.15,
+    ///     temperature: 20.0,
+    ///     is_celsius: true,
     ///     ..Object::default()
     /// };
     /// ```
@@ -71,6 +75,7 @@ impl Object {
         Self {
             mass: 1.0,
             temperature: 293.15,
+            is_celsius: false,
             specific_heat_capacity: 4186.0,
             density: 1000.0,
             velocity: 0.0,
