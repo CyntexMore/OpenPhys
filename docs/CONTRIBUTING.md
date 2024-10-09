@@ -2,7 +2,7 @@
 
 ## 1. Commit messages
 
-Follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specifications for commit messages. This helps maintina readable and organized commit history, making it easier to track changes and understand the evolution of the project.
+Follow the [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/) specifications for commit messages. This helps maintina readable and organized commit history, making it easier to track changes and understand the evolution of the project.
 
 ## 2. Dependecies
 
