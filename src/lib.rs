@@ -8,13 +8,15 @@ pub mod modules {
     pub mod gravitational_force;
     /// The `heat_transfer` function is used to simulate heat transfer between two objects.
     pub mod heat_transfer;
+    /// The `sandbox` function is used to simulate a sandbox environment.
+    pub mod sandbox;
 }
 
 pub mod utils {
     /// The `Object` struct represents a physical object with basic properties.
     pub mod object;
+    /// The `Environment` struct represents a physical environment with basic properties.
+    pub mod environment;
 }
 
-pub use modules::gravitational_force::calculate_gravitational_force;
-pub use modules::heat_transfer::{simulate_heat_transfer, HeatTransferResult};
 pub use utils::object::Object;
