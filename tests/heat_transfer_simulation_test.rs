@@ -1,4 +1,4 @@
-use openphys::modules::heat_transfer::{simulate_heat_transfer, HeatTransferResult};
+use openphys::modules::heat_transfer::simulate_heat_transfer;
 use openphys::utils::object::Object;
 
 #[test]
