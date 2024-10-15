@@ -26,11 +26,15 @@ use crate::utils::object::Object;
 /// ```
 pub fn start_sandbox(environment: &mut Environment, objects: &mut [Object], time_step: f64) {
     println!("Entering sandbox environment.\n");
-    println!("Information about the current sandbox environment:\n");
-    println!("Time step value: {:?}", time_step);
-    println!("Objects: {:?}\n", objects);
-    println!("Environment gravity: {:?}\n", environment.gravity);
-    println!("Environment temperature: {:?}\n", environment.temperature);
-    println!("Environment air pressure: {:?}\n", environment.pressure);
+
+    // Print basic information about the environment
+    println!(
+        "Environment gravity: {:?}\n\
+        Environment temperature: {:?}\n\
+        Environment pressure: {:?}\n\
+        Environment boundaries: {:?}\n",
+        environment.gravity, environment.temperature, environment.pressure, environment.boundaries
+    );
+
     println!("Exiting sandbox environment.\n");
 }
