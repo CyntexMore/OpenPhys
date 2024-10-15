@@ -4,21 +4,23 @@ pub struct Object {
     pub mass: f64,
     /// The object's temperature in kelvin (K).
     pub temperature: f64,
-    /// Specifies if the object's temperature is in celsius or not (˚C).
+    /// Specifies if the object's temperature is in Celsius or not (˚C).
     pub is_celsius: bool,
     /// The object's specific heat capacity in [joule per kilogram kelvin](https://metricsystem.net/derived-units/units-whose-names-include-special-names/joule-per-kilogram-kelvin/) (J/kg K).
     pub specific_heat_capacity: f64,
-    /// The object's density in grams per cm^3 (g/cm^3).
+    /// The object's density in grams per milliliter (g/ml).
     pub density: f64,
-    /// The object's velocity in meter per second (m/s).
-    pub velocity: f64,
     /// The object's kinetic energy in joules (J).
     pub kinetic_energy: f64,
-    /// The object's position in a three dimensional space (x, y, z).
+    /// The object's velocity in a three-dimensional in meter per second (m/s).
+    pub velocity: [f64; 3],
+    /// The object's acceleration in a three-dimensional space in meter per second (m/s).
+    pub acceleration: [f64; 3],
+    /// The position of the object's center in a three-dimensional space (x, y, z).
     pub position: [f64; 3],
 }
 
-/// You can create a new object inside of a variable.
+/// You can create a new object inside a variable.
 ///
 /// # Examples
 /// ```
@@ -45,8 +47,9 @@ impl Object {
             is_celsius: false,
             specific_heat_capacity: 0.0,
             density: 0.0,
-            velocity: 0.0,
             kinetic_energy: 0.0,
+            velocity: [0.0, 0.0, 0.0],
+            acceleration: [0.0, 0.0, 0.0],
             position: [0.0, 0.0, 0.0],
         }
     }
@@ -77,9 +80,10 @@ impl Object {
             temperature: 293.15,
             is_celsius: false,
             specific_heat_capacity: 4186.0,
-            density: 1000.0,
-            velocity: 0.0,
+            density: 1.0,
             kinetic_energy: 0.0,
+            velocity: [0.0, 0.0, 0.0],
+            acceleration: [0.0, 0.0, 0.0],
             position: [0.0, 0.0, 0.0],
         }
     }
