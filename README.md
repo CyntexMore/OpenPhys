@@ -6,15 +6,15 @@
 
 **OpenPhys** is a simple physics engine library written in **Rust**.
 
-- [GitHub](https://github.com/CyntexMore/OpenPhys)
-- [crates.io](https://crates.io/crates/openphys)
+- [GitHub](https://github.com/CyntexMore/OpenPhys) | [crates.io](https://crates.io/crates/openphys)
 
 ## Features
 
-**OpenPhys** is early in developement, a lot more features will be added in the future.
+**OpenPhys** is early in development, a lot more features will be added in the future.
 
 - Heat transfer simulation
 - Calculate gravitational force
+- Sandbox (\*pretty experimental)
 
 ## Installation
 
@@ -30,7 +30,7 @@ openphys = "0.1.3"
 
 ## Documentation
 
-Read the documentation on [doc.rs](https://docs.rs/openphys/latest/openphys) or alternatively generate it yourself with `cargo doc`.
+Read the documentation on [doc.rs](https://docs.rs/openphys/latest/openphys) or alternatively generate it for yourself locally with `cargo doc`.
 
 ## License
 - [AGPL-3.0 license](https://github.com/CyntexMore/OpenPhys/blob/main/LICENSE)
