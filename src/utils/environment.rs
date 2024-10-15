@@ -8,6 +8,8 @@ pub struct Environment {
     pub pressure: f64,
     /// The duration of each simulation step in seconds (s).
     pub time_step: f64,
+    /// The boundaries of the environment in a three dimensional space (*x* * *y* * *z*).
+    pub boundaries: [f64; 3],
 }
 
 impl Environment {
@@ -17,7 +19,7 @@ impl Environment {
     /// ```
     /// use openphys::utils::environment::Environment;
     ///
-    /// let env1 = Environment::new();
+    /// let env = Environment::new();
     /// ```
     pub fn new() -> Self {
         Self {
@@ -25,6 +27,7 @@ impl Environment {
             temperature: 0.0,
             pressure: 0.0,
             time_step: 0.0,
+            boundaries: [0.0, 0.0, 0.0],
         }
     }
 
@@ -34,7 +37,18 @@ impl Environment {
     /// ```
     /// use openphys::utils::environment::Environment;
     ///
-    /// let env1 = Environment::default();
+    /// let env = Environment::default();
+    /// ```
+    ///
+    /// You can also create a new environment by modifying some of its values while keeping others at their defaults.
+    ///
+    /// ```
+    /// use openphys::utils::environment::Environment;
+    ///
+    /// let env = Environment {
+    ///     boundaries: [100.0, 20.0, 100.0],
+    ///     ..Environment::default()
+    /// };
     /// ```
     pub fn default() -> Self {
         Self {
@@ -42,6 +56,7 @@ impl Environment {
             temperature: 288.15,
             pressure: 1.013,
             time_step: 0.1,
+            boundaries: [10.0, 10.0, 10.0],
         }
     }
 }
