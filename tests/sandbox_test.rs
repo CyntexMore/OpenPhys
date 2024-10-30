@@ -31,15 +31,15 @@ fn test_sandbox_obj_move() {
     };
     println!("obj1's position: {:?}", obj1.position);
 
-    obj1.move_to(1.0, 1.0, 1.0);
+    obj1.mv_to(1.0, 1.0, 1.0);
     println!("obj1's position: {:?}", obj1.position);
 
-    obj1.move_x(-1.0);
+    obj1.mv_x(-1.0);
     println!("obj1's position: {:?}", obj1.position);
 
-    obj1.move_y(-1.0);
+    obj1.mv_y(-1.0);
     println!("obj1's position: {:?}", obj1.position);
 
-    obj1.move_z(-1.0);
+    obj1.mv_z(-1.0);
     println!("obj1's position: {:?}", obj1.position);
 }
