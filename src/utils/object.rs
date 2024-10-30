@@ -87,4 +87,59 @@ impl Object {
             position: [0.0, 0.0, 0.0],
         }
     }
+
+    /// You can move an object to a specific location with the `Object::move_to()` function.
+    ///
+    /// # Examples
+    /// ```
+    /// use openphys::utils::object::Object;
+    ///
+    /// let mut obj1 = Object::default();
+    /// obj1.move_to(1.0, 1.0, 1.0);
+    /// ```
+    pub fn move_to(&mut self, x: f64, y: f64, z: f64) {
+        self.position = [x, y, z];
+    }
+
+    /// You can move an object by a specific distance on the *x* axis with the
+    /// `Object::move_x()` function.
+    ///
+    /// # Examples
+    /// ```
+    /// use openphys::utils::object::Object;
+    ///
+    /// let mut obj1 = Object::default();
+    /// obj1.move_x(1.0);
+    /// ```
+    pub fn move_x(&mut self, distance: f64) {
+        self.position[0] += distance;
+    }
+
+    /// You can move an object by a specific distance on the *y* axis with the
+    /// `Object::move_y()` function.
+    ///
+    /// # Examples
+    /// ```
+    /// use openphys::utils::object::Object;
+    ///
+    /// let mut obj1 = Object::default();
+    /// obj1.move_y(1.0);
+    /// ```
+    pub fn move_y(&mut self, distance: f64) {
+        self.position[1] += distance;
+    }
+
+    /// You can move an object by a specific distance on the *z* axis with the
+    /// `Object::move_z()` function.
+    ///
+    /// # Examples
+    /// ```
+    /// use openphys::utils::object::Object;
+    ///
+    /// let mut obj1 = Object::default();
+    /// obj1.move_z(1.0);
+    /// ```
+    pub fn move_z(&mut self, distance: f64) {
+        self.position[2] += distance;
+    }
 }
