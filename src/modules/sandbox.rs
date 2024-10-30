@@ -1,15 +1,15 @@
 use crate::utils::environment::Environment;
 use crate::utils::object::Object;
 
-/// You can use the `start_sandbox` function to start the simulation of a sandbox environment.
+/// You can use the `init_sandbox` function to start the simulation of a sandbox environment.
 ///
-/// \*It's still pretty experimental.
+/// This function is still pretty experimental.
 ///
 /// # Examples
 /// ```
 /// use openphys::utils::environment::Environment;
 /// use openphys::utils::object::Object;
-/// use openphys::modules::sandbox::start_sandbox;
+/// use openphys::modules::sandbox::init_sandbox;
 ///
 /// fn main() {
 ///     let mut objects = vec![
@@ -21,20 +21,20 @@ use crate::utils::object::Object;
 ///
 ///     let time_step: f64 = 0.1;
 ///
-///     let result = start_sandbox(&mut env, &mut objects, time_step);
+///     let result = init_sandbox(&mut env, &mut objects, time_step);
 /// }
 /// ```
-pub fn start_sandbox(environment: &mut Environment, objects: &mut [Object], time_step: f64) {
-    println!("Entering sandbox environment.\n");
+pub fn init_sandbox(environment: &mut Environment, objects: &mut [Object], time_step: f64) {
+    println!("Initializing sandbox environment...\n");
 
-    // Print basic information about the environment
+    println!("Sandbox Environment Variables:");
+    println!("Gravity: {} m/s^2", environment.gravity);
+    println!("Temperature: {} K", environment.temperature);
+    println!("Air Pressure: {} bar", environment.pressure);
     println!(
-        "Environment gravity: {:?}\n\
-        Environment temperature: {:?}\n\
-        Environment pressure: {:?}\n\
-        Environment boundaries: {:?}\n",
-        environment.gravity, environment.temperature, environment.pressure, environment.boundaries
+        "Environment Boundaries: x={}, y={}, z={}\n",
+        environment.boundaries[0], environment.boundaries[1], environment.boundaries[2]
     );
 
-    println!("Exiting sandbox environment.\n");
+    println!("Sandbox initialized successfully!\n");
 }
