@@ -8,7 +8,7 @@ pub struct Environment {
     pub pressure: f64,
     /// The duration of each simulation step in seconds (s).
     pub time_step: f64,
-    /// The boundaries of the environment in a three dimensional space (*x* * *y* * *z*).
+    /// The boundaries of the environment in a three dimensional space (*x* \* *y* \* *z*).
     pub boundaries: [f64; 3],
 }
 
@@ -58,5 +58,22 @@ impl Environment {
             time_step: 0.1,
             boundaries: [10.0, 10.0, 10.0],
         }
+    }
+
+    /// You can change the boundaries of an environment after its initialization using the
+    /// `Environment::set_boundary()` function.
+    ///
+    /// # Examples
+    /// ```
+    /// use openphys::utils::environment::Environment;
+    ///
+    /// let mut env = Environment::default();
+    ///
+    /// env.set_boundary(1000.0, 1000.0, 1000.0);
+    /// ```
+    pub fn set_boundary(&mut self, x: f64, y: f64, z: f64) {
+        self.boundaries[0] = x;
+        self.boundaries[1] = y;
+        self.boundaries[2] = z;
     }
 }
