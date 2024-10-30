@@ -38,7 +38,6 @@ pub struct HeatTransferResult {
 ///
 /// let result = simulate_heat_transfer(&mut obj1,  &mut obj2, time_step, equilibrium_threshold);
 /// ```
-/// \*Note: The objects must be made in mutable variables since their temperatures will get changed. The `time_step` and `equilibrium_threshold` variables must be specified by the user.
 ///
 /// The `time_step` variable specifies the duration of each simulation step in seconds.
 ///
