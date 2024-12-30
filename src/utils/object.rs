@@ -14,7 +14,7 @@ pub struct Object {
     pub kinetic_energy: f64,
     /// The object's velocity in a three-dimensional in meter per second (m/s).
     pub velocity: [f64; 3],
-    /// The object's acceleration in a three-dimensional space in meter per second (m/s).
+    /// The object's acceleration in a three-dimensional space in meter per second squared (m/s^2).
     pub acceleration: [f64; 3],
     /// The position of the object's center in a three-dimensional space (x, y, z).
     pub position: [f64; 3],

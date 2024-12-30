@@ -4,7 +4,7 @@ pub struct Environment {
     pub gravity: f64,
     /// The temperature of the environment (globally, *for now*) in kelvin (K).
     pub temperature: f64,
-    /// The air pressure of the environment (globally, *for now*) in bar (bar).
+    /// The air pressure of the environment (globally, *for now*) in pascal (Pa).
     pub pressure: f64,
     /// The duration of each simulation step in seconds (s).
     pub time_step: f64,
