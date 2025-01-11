@@ -54,7 +54,7 @@ impl Environment {
         Self {
             gravity: 9.81,
             temperature: 288.15,
-            pressure: 1.013,
+            pressure: 101325.0,
             time_step: 0.1,
             boundaries: [10.0, 10.0, 10.0],
         }
