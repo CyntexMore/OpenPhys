@@ -16,14 +16,6 @@
 - Calculate gravitational force
 - Sandbox (\*pretty experimental)
 
-## Installation
-
-You can simply add **OpenPhys** to your project with `cargo add openphys`, or alternatively you can add it to your `Cargo.toml`:
-```
-[dependencies]
-openphys = "0.1.4"
-```
-
 ## Contributing
 
 - [Contribution Guidelines](https://github.com/CyntexMore/OpenPhys/blob/main/docs/CONTRIBUTING.md)
