@@ -18,6 +18,8 @@ pub struct Object {
     pub acceleration: [f64; 3],
     /// The position of the object's center in a three-dimensional space (x, y, z).
     pub position: [f64; 3],
+    /// The vertices of the object in three-dimensional space [(x1, y1, z1), (x2, y2, z2), ...]
+    pub vertices: Vec<[f64; 3]>,
 }
 
 /// You can create a new object inside a variable.
@@ -51,6 +53,7 @@ impl Object {
             velocity: [0.0, 0.0, 0.0],
             acceleration: [0.0, 0.0, 0.0],
             position: [0.0, 0.0, 0.0],
+            vertices: Vec::new(),
         }
     }
 
@@ -85,6 +88,7 @@ impl Object {
             velocity: [0.0, 0.0, 0.0],
             acceleration: [0.0, 0.0, 0.0],
             position: [0.0, 0.0, 0.0],
+            vertices: Vec::new(),
         }
     }
 
@@ -142,4 +146,35 @@ impl Object {
     pub fn mv_z(&mut self, distance: f64) {
         self.position[2] += distance;
     }
+
+    /// You can calculate the geometric center of the object with the `Object::calculate_center()` function.
+    ///
+    /// # Examples
+    /// ```
+    /// use openphys::utils::object::Object;
+    ///
+    /// let mut obj = Object::default();
+    /// obj.vertices = vec![[0.0, 0.0, 0.0], [2.0, 2.0, 2.0]];
+    /// let center = obj.calculate_center();
+    /// assert_eq!(center, [1.0, 1.0, 1.0]);
+    /// ```
+    pub fn calculate_center(&self) -> [f64; 3] {
+        if self.vertices.is_empty() {
+                return self.position;
+        }
+
+        let mut sum_x = 0.0;
+        let mut sum_y = 0.0;
+        let mut sum_z = 0.0;
+        let count = self.vertices.len() as f64;
+
+        for vertex in &self.vertices {
+            sum_x += vertex[0];
+            sum_y += vertex[1];
+            sum_z += vertex[2];
+        }
+
+        [sum_x / count, sum_y / count, sum_z / count]
+    }
 }
+
