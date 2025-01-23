@@ -1,7 +1,7 @@
 use crate::utils::environment::Environment;
 use crate::utils::object::Object;
 
-/// You can use the `init_sandbox` function to start the simulation of a sandbox environment.
+/// You can use the `print_sandbox_info` function to print the details of a sandbox environment.
 ///
 /// This function is still pretty experimental.
 ///
@@ -21,10 +21,10 @@ use crate::utils::object::Object;
 ///
 ///     let time_step: f64 = 0.1;
 ///
-///     let result = init_sandbox(&mut env, &mut objects, time_step);
+///     let result = print_sandbox_info(&mut env, &mut objects, time_step);
 /// }
 /// ```
-pub fn init_sandbox(environment: &mut Environment, objects: &mut [Object], time_step: f64) {
+pub fn print_sandbox_info(environment: &mut Environment, objects: &mut [Object], time_step: f64) {
     println!("Initializing sandbox environment...\n");
 
     println!("Sandbox Environment Variables:");
@@ -35,6 +35,4 @@ pub fn init_sandbox(environment: &mut Environment, objects: &mut [Object], time_
         "Environment Boundaries: x={}, y={}, z={}\n",
         environment.boundaries[0], environment.boundaries[1], environment.boundaries[2]
     );
-
-    println!("Sandbox initialized successfully!\n");
 }
